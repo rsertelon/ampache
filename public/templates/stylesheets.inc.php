@@ -30,13 +30,13 @@ $web_path = AmpConfig::get_web_path();
 
 $theme_path      = AmpConfig::get('theme_path', '/themes/reborn') . '/templates';
 $theme_color     = AmpConfig::get('theme_color', 'dark');
-$theme_css_base  = AmpConfig::get('theme_css_base', ['default.css', 'screen']);
+$theme_css_base  = AmpConfig::get('theme_css_base', [['default.css', 'screen']]);
 $ampache_version = AmpConfig::get('version');
 if ($theme_css_base === null) {
-    $theme_css_base = ['default.css', 'screen'];
+    $theme_css_base = [['default.css', 'screen']];
 }
 if (is_string($theme_css_base)) {
-    $theme_css_base = [$theme_css_base];
+    $theme_css_base = [[$theme_css_base, 'screen']];
 } ?>
 <link rel="stylesheet" href="<?php echo $web_path; ?>/lib/modules/prettyphoto/css/prettyPhoto.min.css" type="text/css" media="screen">
 <link rel="stylesheet" href="<?php echo $web_path; ?>/templates/jquery-ui.custom.css" type="text/css" media="screen">
